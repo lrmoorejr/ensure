@@ -15,7 +15,7 @@
  */
 
 // #define ENSURE_WITH_BACKTRACE
-#include "commons/Ensure.hpp"
+#include "Ensure.hpp"
 
 int main(int, char**) {
 	ensure(true, "This should not evaluate {}", 1);

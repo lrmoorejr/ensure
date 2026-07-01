@@ -1,0 +1,12 @@
+build/
+build-*/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+CTestTestfile.cmake
+.cmake/
+Ensure-test
+Ensure-test-main
+.DS_Store
+.vscode/
+.idea/

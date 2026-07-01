@@ -1,6 +1,9 @@
 # Ensure.hpp
 
-A single-header C++20 library providing assertion, caution, and conditional-throw utilities with `std::format`-style messages.
+All I really wanted was an assertion function that included a filename, line number, and an optional formatted messsage.  What C++ offered was a
+circa 1969 C assert() macro whose main feature is to crash.  So, I made this little header library-- maybe it will be useful for you as well.
+
+Ensure.hpp is a single-header C++20 library providing assertion, caution, and conditional-throw utilities with `std::format`-style messages.
 
 ```cpp
 #include "Ensure.hpp"
