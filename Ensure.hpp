@@ -44,6 +44,12 @@
  */
 #pragma once
 
+// Other headers check for this macro to detect that Ensure.hpp has
+// already been included -- even under a path/filename their own __has_include
+// checks don't know about (e.g. vendored as "3rdparty/Ensure.hpp") -- so they
+// don't redefine ensure()/throw_if() themselves and collide with these.
+#define COMMONS_ENSURE_HPP
+
 #include <cstdlib>
 #include <iostream>
 #include <format>
