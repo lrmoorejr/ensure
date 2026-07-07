@@ -33,7 +33,7 @@ throw_if<std::invalid_argument>(value < 0, "value must be non-negative");
 
 ## Usage
 
-### `ensure(condition [, fmt, args...])`
+### ensure(condition [, fmt, args...])
 
 Use for invariants that indicate a programming error. On failure, prints a diagnostic and terminates immediately via `_exit` — no destructors run, no exceptions to catch.
 
@@ -44,7 +44,7 @@ ensure(result == expected, "got {} but expected {}", result, expected);
 
 Under `NDEBUG`, `ensure` compiles to `((void)0)` — the condition expression itself is not evaluated.
 
-### `caution(fmt [, args...])`
+### caution(fmt [, args...])
 
 Unconditionally prints a message to stderr and continues. The call-site file and line number are captured automatically.
 
@@ -53,7 +53,7 @@ caution("unexpected state, recovering");
 caution("retry {}/{}", attempt, max_retries);
 ```
 
-### `caution_if(condition, fmt [, args...])`
+### caution_if(condition, fmt [, args...])
 
 Prints a message only when the condition is true.
 
@@ -61,7 +61,7 @@ Prints a message only when the condition is true.
 caution_if(buffer.size() > threshold, "buffer pressure: {} bytes", buffer.size());
 ```
 
-### `throw_if<ExceptionType>(condition, args...)`
+### throw_if<ExceptionType>(condition, args...)
 
 Throws an exception when the condition is true. The exception is constructed by forwarding `args` directly to its constructor. Unlike the other facilities, `throw_if` is always active regardless of `NDEBUG`, making it suitable for input validation at API boundaries.
 
