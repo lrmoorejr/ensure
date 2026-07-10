@@ -178,7 +178,7 @@ void ensure_impl(const char *file, int line, bool condition,
         auto pointerCount = backtrace(stackPointers, maxPointers);
         backtrace_symbols_fd(stackPointers, pointerCount, STDERR_FILENO);
 #endif
-        _exit(EXIT_FAILURE);
+        std::_Exit(EXIT_FAILURE);
     }
 }
 
